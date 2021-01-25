@@ -13,7 +13,7 @@ require('./handlers/passport');
 require('dotenv').config({ path: 'variables.env' });
 
 // Mongoose
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.MONGODB_URL);
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', (err) => {
 	console.log('We have an error with the database: ' + err);
@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 // Setting up the routes
 app.use('/', routes);
 
-const PORT = process.env.MONGODB_URL || 3000;
+const PORT = process.env.PORT || 3000;
 
 // Starting the server
 app.listen(PORT, () => console.log('We have a server running on PORT: ' + PORT));
