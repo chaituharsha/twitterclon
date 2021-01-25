@@ -10,7 +10,7 @@ const routes = require('./routes');
 require('./handlers/passport');
 
 // Dot Env
-require('dotenv').config({ path: 'variables.env' });
+//require('dotenv').config({ path: 'variables.env' });
 
 // Mongoose
 mongoose.connect(process.env.DATABASE);
