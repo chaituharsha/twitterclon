@@ -13,7 +13,7 @@ require('./handlers/passport');
 require('dotenv').config({ path: 'variables.env' });
 
 // Mongoose
-mongoose.connect(process.env.MONGODB_URL);
+mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', (err) => {
 	console.log('We have an error with the database: ' + err);
